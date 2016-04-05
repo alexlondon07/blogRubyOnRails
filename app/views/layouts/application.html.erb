@@ -18,18 +18,27 @@
               </button>
               <a class="navbar-brand" href="">Blog RubyOnRails 4</a>
           </div>
-
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                   <li><%= link_to "Inicio", root_path %></li>
                   <li><a href="/articles/" title="">Articulos</a></li>
                   <li><a href="" title="Diseño">Diseño</a></li>
                   <li><a href="" title="Programacion">Programación</a></li>
-                  <li><a href="" title="Tecnologia">Tecnologóa</a></li>
+                  <li><a href="" title="Tecnologia">Tecnologìa</a></li>
+
+                  <% if user_signed_in? %>
+                  <li>
+                      <%=link_to "Cerrar sessión", destroy_user_session_path, method: :delete %>
+                  </li>
+
+                  <% end %>
               </ul>
           </div>
       </div>
   </nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
 
 <%= yield %>
 
